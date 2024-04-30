@@ -6,4 +6,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+# Ouverture du port 80 pour ElasticBeanstalk
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
